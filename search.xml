@@ -34,7 +34,7 @@
       <link href="/2023/11/11/javascript%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%B1%A1%E6%9F%93/"/>
       <url>/2023/11/11/javascript%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%B1%A1%E6%9F%93/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p><img src="/img/about.jpg" alt="这是图片"></p>]]></content>
       
       
       
@@ -47,7 +47,7 @@
       <link href="/2023/11/11/XXE/"/>
       <url>/2023/11/11/XXE/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p><img src="/XXE/f.jpg"></p>]]></content>
       
       
       
