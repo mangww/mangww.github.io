@@ -47,7 +47,7 @@
       <link href="/2023/11/11/XXE/"/>
       <url>/2023/11/11/XXE/</url>
       
-        <content type="html"><![CDATA[<img src="XXE/f.jpg">]]></content>
+        <content type="html"><![CDATA[<p>imag形式</p><img src="/mangww.github.io/2023/11/11/XXE/f.jpg"> <p>中括号形式 </p><p><img src="/XXE/f.jpg" alt="log"></p><p>大括号形式</p>]]></content>
       
       
       
