@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>测试</title>
+      <link href="/2023/11/12/%E6%B5%8B%E8%AF%95/"/>
+      <url>/2023/11/12/%E6%B5%8B%E8%AF%95/</url>
+      
+        <content type="html"><![CDATA[<p>测试文章</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>SSTI</title>
       <link href="/2023/11/11/SSTI/"/>
       <url>/2023/11/11/SSTI/</url>
