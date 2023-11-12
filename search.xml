@@ -47,7 +47,7 @@
       <link href="/2023/11/11/XXE/"/>
       <url>/2023/11/11/XXE/</url>
       
-        <content type="html"><![CDATA[<p><img src="/XXE/f.jpg"></p>]]></content>
+        <content type="html"><![CDATA[<img src="XXE/f.jpg">]]></content>
       
       
       
