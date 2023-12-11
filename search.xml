@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>sql注入</title>
+      <link href="/2023/12/12/sql%E6%B3%A8%E5%85%A5/"/>
+      <url>/2023/12/12/sql%E6%B3%A8%E5%85%A5/</url>
+      
+        <content type="html"><![CDATA[<p><strong>[GYCTF2020]Blacklist1</strong>  </p><p>构造pyload:<br>1’;handler FlagHere open;handler FlagHere read first;handler FlagHere close;#</p><p>知识点: Handler的sql查询方法<br><a href="https://blog.csdn.net/qq_51927659/article/details/117233018">https://blog.csdn.net/qq_51927659/article/details/117233018</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>补充知识点</title>
       <link href="/2023/11/24/%E8%A1%A5%E5%85%85%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
       <url>/2023/11/24/%E8%A1%A5%E5%85%85%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
