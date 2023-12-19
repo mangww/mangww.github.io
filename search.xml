@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>flask session伪造</title>
+      <link href="/2023/12/20/flask-session%E4%BC%AA%E9%80%A0/"/>
+      <url>/2023/12/20/flask-session%E4%BC%AA%E9%80%A0/</url>
+      
+        <content type="html"><![CDATA[<p>利用脚本flask-session-cookie-manager  </p><p>脚本有解密、加密两种功能，具体用法如下：</p><p>解密:<br>python3 flask_session_manager3.py decode -c “要解密的session值” -s “SECRET_KEY”</p><p>加密:<br>python3 flask_session_manager.py3 encode -s “SECRET_KEY” -t “要加密的session值”</p><p>SECRET_KEY指的是密钥</p><p>session格式例如:<br>eyJuYW1lIjoiYWRtaW4ifQ.ZYHJcg.gRqmTkP0GuXE3r7ctFopx7ShICE</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>sql注入做题笔记</title>
       <link href="/2023/12/12/sql%E6%B3%A8%E5%85%A5/"/>
       <url>/2023/12/12/sql%E6%B3%A8%E5%85%A5/</url>
