@@ -23,25 +23,6 @@
     
     
     <entry>
-      <title>VNCTF2024</title>
-      <link href="/2024/02/17/VNCTF2024/"/>
-      <url>/2024/02/17/VNCTF2024/</url>
-      
-        <content type="html"><![CDATA[<h1>web</h1><h2>CutePath<h2><h1>misc</h1><h2>OnlyLocalSql</h2>题目描述: <p>仅仅是一个sql客户端而已，但是强制连接本地服务 啊嘞，为啥给我一个SSH，我的网站呢？ SSH - username: ctf SSH - password: ctf<br>上来给了一个服务器，又是一脸懵。。<br><img src="/mangww.github.io/2024/02/17/VNCTF2024/1.png"></p><h2>sqlshark</h2>题目说sql盲注流量分析,之前做过一次这样的题,flag就是盲注出来的字段。  <p>wirshark打开pacp文件。只看http协议。发现盲注过程为先检测端点,再一步步缩小范围。<br>发现每一个字符的最后一次盲注就是该字符的ascii码,acill码转字母即可。最后得到flag: VNCTF{admin_p@ssw0rd}</p></h2></h2>]]></content>
-      
-      
-      <categories>
-          
-          <category> 比赛 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>SICTF_ROUND#3-web笔记</title>
       <link href="/2024/02/17/SICTF-ROUND-3-web%E7%AC%94%E8%AE%B0/"/>
       <url>/2024/02/17/SICTF-ROUND-3-web%E7%AC%94%E8%AE%B0/</url>
