@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="记一次蓝桥杯经历参加了15届蓝桥杯c++ B组,于是想写这篇文章记录这次比赛经历。 赛前2024.4.12 pm 赛前想法在决定打这场比赛之前，我正着手于 ctf 和 awd 的提高。本想着会无缘蓝桥杯了(或许存在着做安全就不太用学算法的误解，但随着学习的深入愈发认识到算法的重要性) 自学ctf的过程中走了很多弯路，随着不断地深入，感到每走一步都很难，只能靠刷题来一点一点地去积累。正是因为自己的这">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记一次蓝桥杯经历">
+<meta property="og:url" content="http://example.com/2024/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%BB%8F%E5%8E%86/index.html">
+<meta property="og:site_name" content="wm&#39;s blog">
+<meta property="og:description" content="记一次蓝桥杯经历参加了15届蓝桥杯c++ B组,于是想写这篇文章记录这次比赛经历。 赛前2024.4.12 pm 赛前想法在决定打这场比赛之前，我正着手于 ctf 和 awd 的提高。本想着会无缘蓝桥杯了(或许存在着做安全就不太用学算法的误解，但随着学习的深入愈发认识到算法的重要性) 自学ctf的过程中走了很多弯路，随着不断地深入，感到每走一步都很难，只能靠刷题来一点一点地去积累。正是因为自己的这">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-04-12T10:00:00.000Z">
+<meta property="article:modified_time" content="2024-04-26T10:55:02.321Z">
+<meta property="article:author" content="wm">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/1.jpg">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/1.jpg" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/1.jpg">
+        
+      
+    
+    <!-- title -->
+    <title>记一次蓝桥杯经历</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2024/04/26/test1/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2024/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%BB%8F%E5%8E%86/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2024/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%BB%8F%E5%8E%86/&text=记一次蓝桥杯经历"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2024/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%BB%8F%E5%8E%86/&title=记一次蓝桥杯经历"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2024/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%BB%8F%E5%8E%86/&is_video=false&description=记一次蓝桥杯经历"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=记一次蓝桥杯经历&body=Check out this article: http://example.com/2024/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%BB%8F%E5%8E%86/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2024/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%BB%8F%E5%8E%86/&title=记一次蓝桥杯经历"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2024/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%BB%8F%E5%8E%86/&title=记一次蓝桥杯经历"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2024/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%BB%8F%E5%8E%86/&title=记一次蓝桥杯经历"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2024/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%BB%8F%E5%8E%86/&title=记一次蓝桥杯经历"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2024/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%BB%8F%E5%8E%86/&name=记一次蓝桥杯经历&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2024/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%BB%8F%E5%8E%86/&t=记一次蓝桥杯经历"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%BB%8F%E5%8E%86"><span class="toc-number">1.</span> <span class="toc-text">记一次蓝桥杯经历</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B5%9B%E5%89%8D"><span class="toc-number">1.1.</span> <span class="toc-text">赛前</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%9B%E5%89%8D%E6%83%B3%E6%B3%95"><span class="toc-number">1.1.1.</span> <span class="toc-text">赛前想法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%87%E8%B5%9B%E8%BF%87%E7%A8%8B"><span class="toc-number">1.1.2.</span> <span class="toc-text">备赛过程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B5%9B%E5%90%8E"><span class="toc-number">1.2.</span> <span class="toc-text">赛后</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AF%94%E8%B5%9B%E6%84%9F%E5%8F%97"><span class="toc-number">1.2.1.</span> <span class="toc-text">比赛感受</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AF%94%E8%B5%9B%E7%BB%93%E6%9E%9C"><span class="toc-number">1.2.2.</span> <span class="toc-text">比赛结果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.3.</span> <span class="toc-text">总结</span></a></li></ol></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        记一次蓝桥杯经历
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">wm</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2024-04-12T10:00:00.000Z" class="dt-published" itemprop="datePublished">2024-04-12</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1 id="记一次蓝桥杯经历"><a href="#记一次蓝桥杯经历" class="headerlink" title="记一次蓝桥杯经历"></a>记一次蓝桥杯经历</h1><p>参加了15届蓝桥杯c++ B组,于是想写这篇文章记录这次比赛经历。</p>
+<h2 id="赛前"><a href="#赛前" class="headerlink" title="赛前"></a>赛前</h2><p>2024.4.12 pm</p>
+<h3 id="赛前想法"><a href="#赛前想法" class="headerlink" title="赛前想法"></a>赛前想法</h3><p>在决定打这场比赛之前，我正着手于 ctf 和 awd 的提高。本想着会无缘蓝桥杯了(或许存在着做安全就不太用学算法的误解，但随着学习的深入愈发认识到算法的重要性)</p>
+<p>自学ctf的过程中走了很多弯路，随着不断地深入，感到每走一步都很难，只能靠刷题来一点一点地去积累。正是因为自己的这种缓慢进步，加之其他一些因素的影响，导致较长时间内并没有拿到什么成果，我意识到自己需要做点什么了。</p>
+<p>那就从蓝桥杯开始吧!!! 学校认可，写到简历上也说的过去吧！</p>
+<h3 id="备赛过程"><a href="#备赛过程" class="headerlink" title="备赛过程"></a>备赛过程</h3><p>报名没多长时间后,就开始着手于蓝桥杯的准备了。记得大概是在23年的11、12月份,那时正值期末考试，最后那几天干脆期末考试不复习了(有点小把握),就开始了正式的备战。</p>
+<p>刚开始备战有点不适应,因为除了刚到大学的那段时间学了一段算法之外,很长一段时间没有再认真学习过算法了。</p>
+<p>就这样备赛过程跨越了大二上的末尾以及整个寒假直到大二下的今天(明天比赛。。)</p>
+<p>在学习各种算法的过程中肯定也是遇到了很多困难。只能一点一点去克服，当真正掌握了某种算法时，那种成就感也是蛮好的。</p>
+<p>印象深刻的就是学动态规划和dfs的时候，从不理解到弄懂再到会用,在惊讶算法神奇的同时,也给我带来了很大的成就感，这种成就感又激励我继续学下去，算是一个良性循环吧。</p>
+<p><strong>学习本身就是反人性的,过程难免痛苦,我们能做的只有苦中作乐。</strong></p>
+<p><del>当然能不受苦谁tm找苦受，这不纯纯有病吗</del></p>
+<h2 id="赛后"><a href="#赛后" class="headerlink" title="赛后"></a>赛后</h2><p>2024.4.13 pm</p>
+<h3 id="比赛感受"><a href="#比赛感受" class="headerlink" title="比赛感受"></a>比赛感受</h3><p>在历经4h的比赛后,就第一时间写了这部分内容。个人感觉这从比赛挺难的，数据给的有点大，暴力不是太好用。高精度那题敲到最后发现高精度乘法怎么敲给忘了，相当于浪费了1h，这就有点难受了。</p>
+<p>比赛的时候不知道为啥像没睡醒一样,关键是前天晚上休息得还挺好。说实话对自己这次比赛的表现不太满意,比较有把握的就只有一道填空，一道大题。其他几道大题也敲了，但是感觉要么过不了，要么只能拿部分分。</p>
+<p>现在就等比赛结果出来了，估计大概率拿不到自己想要的成绩了。</p>
+<h3 id="比赛结果"><a href="#比赛结果" class="headerlink" title="比赛结果"></a>比赛结果</h3><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2>
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%BB%8F%E5%8E%86"><span class="toc-number">1.</span> <span class="toc-text">记一次蓝桥杯经历</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B5%9B%E5%89%8D"><span class="toc-number">1.1.</span> <span class="toc-text">赛前</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%9B%E5%89%8D%E6%83%B3%E6%B3%95"><span class="toc-number">1.1.1.</span> <span class="toc-text">赛前想法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%87%E8%B5%9B%E8%BF%87%E7%A8%8B"><span class="toc-number">1.1.2.</span> <span class="toc-text">备赛过程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B5%9B%E5%90%8E"><span class="toc-number">1.2.</span> <span class="toc-text">赛后</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AF%94%E8%B5%9B%E6%84%9F%E5%8F%97"><span class="toc-number">1.2.1.</span> <span class="toc-text">比赛感受</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AF%94%E8%B5%9B%E7%BB%93%E6%9E%9C"><span class="toc-number">1.2.2.</span> <span class="toc-text">比赛结果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.3.</span> <span class="toc-text">总结</span></a></li></ol></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2024/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%BB%8F%E5%8E%86/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2024/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%BB%8F%E5%8E%86/&text=记一次蓝桥杯经历"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2024/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%BB%8F%E5%8E%86/&title=记一次蓝桥杯经历"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2024/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%BB%8F%E5%8E%86/&is_video=false&description=记一次蓝桥杯经历"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=记一次蓝桥杯经历&body=Check out this article: http://example.com/2024/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%BB%8F%E5%8E%86/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2024/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%BB%8F%E5%8E%86/&title=记一次蓝桥杯经历"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2024/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%BB%8F%E5%8E%86/&title=记一次蓝桥杯经历"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2024/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%BB%8F%E5%8E%86/&title=记一次蓝桥杯经历"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2024/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%BB%8F%E5%8E%86/&title=记一次蓝桥杯经历"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2024/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%BB%8F%E5%8E%86/&name=记一次蓝桥杯经历&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2024/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%BB%8F%E5%8E%86/&t=记一次蓝桥杯经历"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <!-- <footer id="footer"> -->
+<!--   <div class="footer-left"> -->
+<!--     Copyright &copy; -->
+<!--      -->
+<!--      -->
+<!--     2024-2034 -->
+<!--     wm -->
+<!--   </div> -->
+<!--   <div class="footer-right"> -->
+<!--     <nav> -->
+<!--       <ul> -->
+<!--         <!-- -->
+<!--       <li><a href="/">Home</a></li><!-- -->
+<!--     <!-- -->
+<!--       <li><a href="/about/">About</a></li><!-- -->
+<!--     <!-- -->
+<!--       <li><a href="/archives/">Writing</a></li><!-- -->
+<!--      -->
+<!--       </ul> -->
+<!--     </nav> -->
+<!--   </div> -->
+<!-- </footer> -->
+
+<footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2024-2034
+    wm
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

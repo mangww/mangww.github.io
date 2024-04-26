@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="MiscGeekChallegenc连接根据提示: len(array)&#x3D;5 &amp;&amp; len(passwd)&#x3D;114 猜测: 密码长度为 114,每次连接随机取5个字符身生成密码。 用脚本跑: 1234567891011121314151617181920212223242526from pwn import *import stringdic &#x3D; string.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SICTF-ROUND-3-Misc笔记">
+<meta property="og:url" content="http://example.com/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="wm&#39;s blog">
+<meta property="og:description" content="MiscGeekChallegenc连接根据提示: len(array)&#x3D;5 &amp;&amp; len(passwd)&#x3D;114 猜测: 密码长度为 114,每次连接随机取5个字符身生成密码。 用脚本跑: 1234567891011121314151617181920212223242526from pwn import *import stringdic &#x3D; string.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/1.png">
+<meta property="og:image" content="http://example.com/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/2.png">
+<meta property="og:image" content="http://example.com/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/3.png">
+<meta property="og:image" content="http://example.com/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/4.png">
+<meta property="og:image" content="http://example.com/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/5.png">
+<meta property="og:image" content="http://example.com/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/6.png">
+<meta property="og:image" content="http://example.com/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/7.png">
+<meta property="og:image" content="http://example.com/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/8.png">
+<meta property="og:image" content="http://example.com/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/9.png">
+<meta property="article:published_time" content="2024-02-20T12:45:04.000Z">
+<meta property="article:modified_time" content="2024-04-26T10:48:08.794Z">
+<meta property="article:author" content="wm">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/1.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/1.jpg">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/1.jpg" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/1.jpg">
+        
+      
+    
+    <!-- title -->
+    <title>SICTF-ROUND-3-Misc笔记</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2024/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%BB%8F%E5%8E%86/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2024/02/17/SICTF-ROUND-3-web%E7%AC%94%E8%AE%B0/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/&text=SICTF-ROUND-3-Misc笔记"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/&title=SICTF-ROUND-3-Misc笔记"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/&is_video=false&description=SICTF-ROUND-3-Misc笔记"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=SICTF-ROUND-3-Misc笔记&body=Check out this article: http://example.com/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/&title=SICTF-ROUND-3-Misc笔记"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/&title=SICTF-ROUND-3-Misc笔记"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/&title=SICTF-ROUND-3-Misc笔记"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/&title=SICTF-ROUND-3-Misc笔记"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/&name=SICTF-ROUND-3-Misc笔记&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/&t=SICTF-ROUND-3-Misc笔记"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Misc"><span class="toc-number">1.</span> <span class="toc-text">Misc</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#GeekChallege"><span class="toc-number">1.1.</span> <span class="toc-text">GeekChallege</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9C%9F%F0%9F%92%A8%E7%AD%BE%E5%88%B0"><span class="toc-number">1.2.</span> <span class="toc-text">真💨签到</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WHO-WHO-WHO"><span class="toc-number">1.3.</span> <span class="toc-text">WHO?WHO?WHO</span></a></li></ol></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        SICTF-ROUND-3-Misc笔记
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">wm</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2024-02-20T12:45:04.000Z" class="dt-published" itemprop="datePublished">2024-02-20</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h1><h2 id="GeekChallege"><a href="#GeekChallege" class="headerlink" title="GeekChallege"></a>GeekChallege</h2><p>nc连接<br><img src="/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/1.png"><br>根据提示: len(array)&#x3D;5 &amp;&amp; len(passwd)&#x3D;114 猜测: 密码长度为 114,每次连接随机取5个字符身生成密码。</p>
+<p>用脚本跑:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> string</span><br><span class="line"></span><br><span class="line">dic = string.printable  <span class="comment"># string.printable将给出所有的标点符号，数字，ascii_letters和空格</span></span><br><span class="line">host = remote(<span class="string">&#x27;yuanshen.life&#x27;</span>, <span class="number">40029</span>)  <span class="comment">#远程连接</span></span><br><span class="line">password = [<span class="string">&#x27;&#x27;</span>]*<span class="number">114</span>  <span class="comment">#初始密码</span></span><br><span class="line"><span class="comment">#context(log_level=&quot;debug&quot;)  #设置成给出错误信息模式</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> dic:</span><br><span class="line">    res = host.recvuntil(<span class="string">b&#x27;&gt;&#x27;</span>)  <span class="comment"># 接收直至分隔符 &gt;</span></span><br><span class="line">    _password = c*<span class="number">114</span></span><br><span class="line">    host.sendline(_password.encode())  <span class="comment">#发送16进制数据和回车</span></span><br><span class="line">    res = host.recvline(keepends=<span class="literal">False</span>).decode() <span class="comment">#不保留返回结果的\n</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="string">&#x27;1&#x27;</span> <span class="keyword">in</span> res:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">114</span>):</span><br><span class="line">            <span class="keyword">if</span> res[i] == <span class="string">&#x27;1&#x27;</span>:</span><br><span class="line">                password[i] = c</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">all</span>(password):</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">host.recvuntil(<span class="string">b&quot;&gt;&quot;</span>)</span><br><span class="line">host.sendline(<span class="string">&quot;&quot;</span>.join(password).encode())</span><br><span class="line"></span><br><span class="line">host.interactive() <span class="comment">#开启交互</span></span><br><span class="line">host.close()</span><br></pre></td></tr></table></figure>
+<p>得到flag：SICTF{0ac1d3f9-26f1-4853-9a3f-f6ef25822b51}</p>
+<h2 id="真💨签到"><a href="#真💨签到" class="headerlink" title="真💨签到"></a>真💨签到</h2><p>题目描述:</p>
+<p>月月最近玩了一款新的游戏：无尽的拉格朗日。她觉得实在是太好玩了！很想推荐给大家~<br>提示:<br>base？文本加密字母？<br>winhex打开压缩包,发现文件尾有一串字符串。<br><img src="/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/2.png"></p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">5456545454565458414259555854585458434152595958415a435959595558563d </span><br></pre></td></tr></table></figure>
+<p>放到赛博厨子，magic发现16进制转字符串得到</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TVTTTVTXABYUXTXTXCARYYXAZCYYYUXV=</span><br></pre></td></tr></table></figure>
+<p>然后文本加密成字母解密(又学到一种加密方式hh):</p>
+<img src="/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/3.png">
+得到密码： 2024HappyNewYear 打开视频。
+audacity打开视频看看,这题是更改采样率
+<img src="/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/4.png">
+音频名:LagrangeisCapatlized 即Lagrange is Capitalized 提示 Lagrange是大写。
+
+<p>则steghide隐写密码是 givemeyourLAGRANGE<br>提取得到flag: SICTF{T3e_endless_Lagrange_is_really_fun!}<br><img src="/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/5.png"></p>
+<h2 id="WHO-WHO-WHO"><a href="#WHO-WHO-WHO" class="headerlink" title="WHO?WHO?WHO"></a>WHO?WHO?WHO</h2><p>提示: 压缩包密码为6位小写字母<br>ziperello爆破得到密码 qweqwe。<br>打开文本看到:</p>
+<img src="/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/6.png">
+
+<p>这是Unicode零宽度字符隐写。<br>介绍一下:</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">零宽度字符隐写术（Zero-Width Space Steganography）：</span><br><span class="line">将隐藏消息编码和解码为不可打印/可读字符。</span><br><span class="line">字符包括：</span><br><span class="line">零宽度空格（\u200b）</span><br><span class="line">零宽度非连接符（\u200c）</span><br><span class="line">零宽度连接符（\u200d）</span><br><span class="line">从左至右书写标记（\u200e）</span><br><span class="line">从右至左书写标记（\u200f）</span><br></pre></td></tr></table></figure>
+
+<p>判断0宽度字符隐写的几种方式:<br>1.在kali中用vim打开是这种样子</p>
+<img src="/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/7.png">
+
+<p>2.在光标移动中有明显的停顿感,就像这题的文本,真的卡。。</p>
+<p>3.在010或者winhex中打开是这个样子的。</p>
+<img src="/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/8.png">
+
+
+<p>回到这题,将文本进行解码得到:</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">U2FsdGVkX19uvldJ6CGUNff3B28QEdIjZqgUh98K+/0J16ELU8WVQydohw4P5+2M</span><br><span class="line">jbhTLQHNOpcoOd7kSRgy8pwpovCmimdD8M0IbYUeXjNKYePL/WP4PCMaOJHAW3HR</span><br><span class="line">b7IEoDDH1NYh3o5NwMmcFEqy1ujf72VgQIQkaeYFFFE=</span><br></pre></td></tr></table></figure>
+<p>再进行rabbit解密,密钥为shumu得到一串DNA:</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GTAGAGCTAGTCCTT&#123;GGGTCACGGTTC_GGGTCACGGTTC_GAACGGTTC_GTAGTG_GCTTCA_GTAGACGTGGCGGTG_GTAGACTCA_TATGACCGG_GCTCGGGCT&#125;</span><br></pre></td></tr></table></figure>
+<p>根据这个表解码得到flag：SICTF{Q1A0_Q1A0_GA0_SU_N1_SHUMU_SH1_ZHA_NAN}</p>
+<img src="/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/9.png">
+
+
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Misc"><span class="toc-number">1.</span> <span class="toc-text">Misc</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#GeekChallege"><span class="toc-number">1.1.</span> <span class="toc-text">GeekChallege</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9C%9F%F0%9F%92%A8%E7%AD%BE%E5%88%B0"><span class="toc-number">1.2.</span> <span class="toc-text">真💨签到</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WHO-WHO-WHO"><span class="toc-number">1.3.</span> <span class="toc-text">WHO?WHO?WHO</span></a></li></ol></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/&text=SICTF-ROUND-3-Misc笔记"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/&title=SICTF-ROUND-3-Misc笔记"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/&is_video=false&description=SICTF-ROUND-3-Misc笔记"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=SICTF-ROUND-3-Misc笔记&body=Check out this article: http://example.com/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/&title=SICTF-ROUND-3-Misc笔记"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/&title=SICTF-ROUND-3-Misc笔记"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/&title=SICTF-ROUND-3-Misc笔记"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/&title=SICTF-ROUND-3-Misc笔记"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/&name=SICTF-ROUND-3-Misc笔记&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2024/02/20/SICTF-ROUND-3-Misc%E7%AC%94%E8%AE%B0/&t=SICTF-ROUND-3-Misc笔记"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <!-- <footer id="footer"> -->
+<!--   <div class="footer-left"> -->
+<!--     Copyright &copy; -->
+<!--      -->
+<!--      -->
+<!--     2024-2034 -->
+<!--     wm -->
+<!--   </div> -->
+<!--   <div class="footer-right"> -->
+<!--     <nav> -->
+<!--       <ul> -->
+<!--         <!-- -->
+<!--       <li><a href="/">Home</a></li><!-- -->
+<!--     <!-- -->
+<!--       <li><a href="/about/">About</a></li><!-- -->
+<!--     <!-- -->
+<!--       <li><a href="/archives/">Writing</a></li><!-- -->
+<!--      -->
+<!--       </ul> -->
+<!--     </nav> -->
+<!--   </div> -->
+<!-- </footer> -->
+
+<footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2024-2034
+    wm
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
