@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="web这次web很多题都是直接给出源码让绕过。 牢牢记住，逝者为大直接给出源码: 12345678910111213141516171819202122&lt;?phphighlight_file(__FILE__);function Kobe($cmd)&#123;    if (strlen($cmd) &gt; 13) &#123;        die(&quot;see you agai">
+<meta property="og:type" content="article">
+<meta property="og:title" content="xyctf-web">
+<meta property="og:url" content="http://example.com/2024/04/28/xyctf2024/index.html">
+<meta property="og:site_name" content="wm&#39;s blog">
+<meta property="og:description" content="web这次web很多题都是直接给出源码让绕过。 牢牢记住，逝者为大直接给出源码: 12345678910111213141516171819202122&lt;?phphighlight_file(__FILE__);function Kobe($cmd)&#123;    if (strlen($cmd) &gt; 13) &#123;        die(&quot;see you agai">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-04-28T11:00:00.000Z">
+<meta property="article:modified_time" content="2024-04-27T15:14:33.213Z">
+<meta property="article:author" content="wm">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/1.jpg">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/1.jpg" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/1.jpg">
+        
+      
+    
+    <!-- title -->
+    <title>xyctf-web</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2024/04/26/web%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B01/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2024/04/28/xyctf2024/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2024/04/28/xyctf2024/&text=xyctf-web"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2024/04/28/xyctf2024/&title=xyctf-web"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2024/04/28/xyctf2024/&is_video=false&description=xyctf-web"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=xyctf-web&body=Check out this article: http://example.com/2024/04/28/xyctf2024/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2024/04/28/xyctf2024/&title=xyctf-web"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2024/04/28/xyctf2024/&title=xyctf-web"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2024/04/28/xyctf2024/&title=xyctf-web"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2024/04/28/xyctf2024/&title=xyctf-web"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2024/04/28/xyctf2024/&name=xyctf-web&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2024/04/28/xyctf2024/&t=xyctf-web"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#web"><span class="toc-number">1.</span> <span class="toc-text">web</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%A2%E7%89%A2%E8%AE%B0%E4%BD%8F%EF%BC%8C%E9%80%9D%E8%80%85%E4%B8%BA%E5%A4%A7"><span class="toc-number">1.1.</span> <span class="toc-text">牢牢记住，逝者为大</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#warm-up"><span class="toc-number">1.2.</span> <span class="toc-text">warm up</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ezmd5"><span class="toc-number">1.3.</span> <span class="toc-text">ezmd5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ezpop"><span class="toc-number">1.4.</span> <span class="toc-text">ezpop</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ezClass"><span class="toc-number">1.5.</span> <span class="toc-text">ezClass</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ezSerialize"><span class="toc-number">1.6.</span> <span class="toc-text">ezSerialize</span></a></li></ol></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        xyctf-web
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">wm</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2024-04-28T11:00:00.000Z" class="dt-published" itemprop="datePublished">2024-04-28</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1 id="web"><a href="#web" class="headerlink" title="web"></a>web</h1><p>这次web很多题都是直接给出源码让绕过。</p>
+<h2 id="牢牢记住，逝者为大"><a href="#牢牢记住，逝者为大" class="headerlink" title="牢牢记住，逝者为大"></a>牢牢记住，逝者为大</h2><p>直接给出源码:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="title function_ invoke__">highlight_file</span>(<span class="keyword">__FILE__</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Kobe</span>(<span class="params"><span class="variable">$cmd</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="title function_ invoke__">strlen</span>(<span class="variable">$cmd</span>) &gt; <span class="number">13</span>) &#123;</span><br><span class="line">        <span class="keyword">die</span>(<span class="string">&quot;see you again~&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (<span class="title function_ invoke__">preg_match</span>(<span class="string">&quot;/echo|exec|eval|system|fputs|\.|\/|\\|/i&quot;</span>, <span class="variable">$cmd</span>)) &#123;</span><br><span class="line">        <span class="keyword">die</span>(<span class="string">&quot;肘死你&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">foreach</span> (<span class="variable">$_GET</span> <span class="keyword">as</span> <span class="variable">$val_name</span> =&gt; <span class="variable">$val_val</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="title function_ invoke__">preg_match</span>(<span class="string">&quot;/bin|mv|cp|ls|\||f|a|l|\?|\*|\&gt;/i&quot;</span>, <span class="variable">$val_val</span>)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;what can i say&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable">$cmd</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable">$cmd</span> = <span class="title function_ invoke__">Kobe</span>(<span class="variable">$_GET</span>[<span class="string">&#x27;cmd&#x27;</span>]);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;#man,&quot;</span> . <span class="variable">$cmd</span>  . <span class="string">&quot;,manba out&quot;</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;&lt;br&gt;&quot;</span>;</span><br><span class="line"><span class="keyword">eval</span>(<span class="string">&quot;#man,&quot;</span> . <span class="variable">$cmd</span> . <span class="string">&quot;,mamba out&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>这题感觉就棘手的就是最后这个eval函数里面 $cmd两边的脏东西.<br>对于前面的”#man”存在单行注释符，可以用换行符%0a绕过,对于后面的字符串可以直接用#(%23)注释掉.</p>
+<p>这题另一种解法就是用nc反弹shell,nc这块知识有时间得补一补了。</p>
+<h2 id="warm-up"><a href="#warm-up" class="headerlink" title="warm up"></a>warm up</h2><p><strong>第一层:</strong><br>一系列md5绕过就不多说了，这个链接说的很清楚。<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/2202_75361164/article/details/130919311">https://blog.csdn.net/2202_75361164/article/details/130919311</a><br>值得说的就是有一句:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_ invoke__">extract</span>(<span class="variable">$_GET</span>);</span><br></pre></td></tr></table></figure>
+<p>extract()函数用于将数组中的变量导入到当前的符号表中，用法：</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">extract($array, $extract_type, $prefix)</span><br></pre></td></tr></table></figure>
+<p>array - 一个指定的数组。extract_type - 可选项,默认为 EXTR_OVERWRITE - 碰撞时，现有变量被覆盖。<br>所以说可以通过get传参覆盖现有变量。  </p>
+<p>对于这一句，XYCTF_550102591 的md5值恰好是以0e开头的.</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">md5($XY) == md5(&quot;XYCTF_550102591&quot;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>第二层</strong>:<br>主要是preg_replace的用法：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_ invoke__">preg_replace</span>(<span class="variable">$pattern</span>, <span class="variable">$replacement</span>, <span class="variable">$string</span>)</span><br></pre></td></tr></table></figure>
+<p>\e模式会造成命令执行,在php5.5后的版本被弃用。但是在其他模式下第二个参数<br>$replacement仍会被当作代码来执行。</p>
+<h2 id="ezmd5"><a href="#ezmd5" class="headerlink" title="ezmd5"></a>ezmd5</h2><p>两张图片不一样但是md5值一样:<br><a target="_blank" rel="noopener" href="https://crypto.stackexchange.com/questions/1434/are-there-two-known-strings-which-have-the-same-md5-hash-value">https://crypto.stackexchange.com/questions/1434/are-there-two-known-strings-which-have-the-same-md5-hash-value</a></p>
+<h2 id="ezpop"><a href="#ezpop" class="headerlink" title="ezpop"></a>ezpop</h2><h2 id="ezClass"><a href="#ezClass" class="headerlink" title="ezClass"></a>ezClass</h2><p>直接给出源码:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="title function_ invoke__">highlight_file</span>(<span class="keyword">__FILE__</span>);</span><br><span class="line"><span class="variable">$a</span>=<span class="variable">$_GET</span>[<span class="string">&#x27;a&#x27;</span>];</span><br><span class="line"><span class="variable">$aa</span>=<span class="variable">$_GET</span>[<span class="string">&#x27;aa&#x27;</span>];</span><br><span class="line"><span class="variable">$b</span>=<span class="variable">$_GET</span>[<span class="string">&#x27;b&#x27;</span>];</span><br><span class="line"><span class="variable">$bb</span>=<span class="variable">$_GET</span>[<span class="string">&#x27;bb&#x27;</span>];</span><br><span class="line"><span class="variable">$c</span>=<span class="variable">$_GET</span>[<span class="string">&#x27;c&#x27;</span>];</span><br><span class="line">((<span class="keyword">new</span> <span class="variable">$a</span>(<span class="variable">$aa</span>))-&gt;<span class="variable">$c</span>())((<span class="keyword">new</span> <span class="variable">$b</span>(<span class="variable">$bb</span>))-&gt;<span class="variable">$c</span>());</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="ezSerialize"><a href="#ezSerialize" class="headerlink" title="ezSerialize"></a>ezSerialize</h2><p>第一关源码:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">include</span> <span class="string">&#x27;flag.php&#x27;</span>;</span><br><span class="line"><span class="title function_ invoke__">highlight_file</span>(_FILE_);</span><br><span class="line"><span class="title function_ invoke__">error_reporting</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Flag</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$token</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$password</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"><span class="variable">$a</span>,<span class="variable">$b</span></span>)</span>&#123;</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;token = <span class="variable">$a</span>;</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;password = <span class="variable">$b</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">login</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">$this</span>-&gt;token === <span class="variable language_">$this</span>-&gt;password;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">isset</span>(<span class="variable">$_GET</span>[<span class="string">&#x27;pop&#x27;</span>]))&#123;</span><br><span class="line">    <span class="variable">$pop</span> = <span class="title function_ invoke__">unserialize</span>(<span class="variable">$_GET</span>[<span class="string">&#x27;pop&#x27;</span>]);</span><br><span class="line">    <span class="variable">$pop</span>-&gt;token=<span class="title function_ invoke__">md5</span>(<span class="title function_ invoke__">mt_rand</span>());</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(<span class="variable">$pop</span>-&gt;<span class="title function_ invoke__">login</span>())&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="variable">$flag</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>为了使对象$pop的$token属性和$password属性保持相等，这里可以用引用。<br>当引用像这样用时:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="variable">$a</span> =&amp; <span class="variable">$b</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>$a和$b在这里是完全相同的,这并不是$a指向了$b或者相反，<br>而是$a和$b指向了同一个地方。<br>所以可以基于此构造payload:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Flag</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$token</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$password</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"><span class="variable">$a</span>,<span class="variable">$b</span></span>)</span>&#123;</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;token = <span class="variable">$a</span>;</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;password = &amp;<span class="variable language_">$this</span>-&gt;token;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable">$pop</span> = <span class="keyword">new</span> <span class="title class_">Flag</span>(<span class="number">1</span>,<span class="number">1</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="title function_ invoke__">urlencode</span>(<span class="title function_ invoke__">serialize</span>(<span class="variable">$pop</span>));</span><br></pre></td></tr></table></figure>
+<p>第二关源码:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="title function_ invoke__">highlight_file</span>(<span class="keyword">__FILE__</span>);</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$mack</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__invoke</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;mack-&gt;<span class="title function_ invoke__">nonExistentMethod</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$luo</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__get</span>(<span class="params"><span class="variable">$key</span></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;o.O&lt;br&gt;&quot;</span>;</span><br><span class="line">        <span class="variable">$function</span> = <span class="variable language_">$this</span>-&gt;luo;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable">$function</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$wang1</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__call</span>(<span class="params"><span class="variable">$wang1</span>,<span class="variable">$wang2</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">include</span> <span class="string">&#x27;flag.php&#x27;</span>;</span><br><span class="line">        <span class="keyword">echo</span> <span class="variable">$flag2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">D</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$lao</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$chen</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__toString</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;O.o&lt;br&gt;&quot;</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="title function_ invoke__">is_null</span>(<span class="variable">$this</span>-&gt;lao-&gt;chen) ? <span class="string">&quot;&quot;</span> : <span class="variable language_">$this</span>-&gt;lao-&gt;chen;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">E</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$name</span> = <span class="string">&quot;xxxxx&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$num</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__unserialize</span>(<span class="params"><span class="variable">$data</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;&lt;br&gt;学到就是赚到!&lt;br&gt;&quot;</span>;</span><br><span class="line">        <span class="keyword">echo</span> <span class="variable">$data</span>[<span class="string">&#x27;num&#x27;</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__wakeup</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="variable language_">$this</span>-&gt;name!=<span class="string">&#x27;&#x27;</span> || <span class="variable language_">$this</span>-&gt;num!=<span class="string">&#x27;&#x27;</span>)&#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">&quot;旅行者别忘记旅行的意义!&lt;br&gt;&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">isset</span>(<span class="variable">$_POST</span>[<span class="string">&#x27;pop&#x27;</span>])) &#123;</span><br><span class="line">    <span class="title function_ invoke__">unserialize</span>(<span class="variable">$_POST</span>[<span class="string">&#x27;pop&#x27;</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第三关源码:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="title function_ invoke__">error_reporting</span>(<span class="number">0</span>);</span><br><span class="line"><span class="title function_ invoke__">highlight_file</span>(<span class="keyword">__FILE__</span>);</span><br><span class="line"><span class="comment">// flag.php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">XYCTFNO1</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$Liu</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$T1ng</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="variable">$upsw1ng</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"><span class="variable">$Liu</span>, <span class="variable">$T1ng</span>, <span class="variable">$upsw1ng</span> = Showmaker</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;Liu = <span class="variable">$Liu</span>;</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;T1ng = <span class="variable">$T1ng</span>;</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;upsw1ng = <span class="variable">$upsw1ng</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">XYCTFNO2</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$crypto0</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$adwa</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"><span class="variable">$crypto0</span>, <span class="variable">$adwa</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;crypto0 = <span class="variable">$crypto0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">XYCTF</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable language_">$this</span>-&gt;adwa-&gt;crypto0 != <span class="string">&#x27;dev1l&#x27;</span> <span class="keyword">or</span> <span class="variable language_">$this</span>-&gt;adwa-&gt;T1ng != <span class="string">&#x27;yuroandCMD258&#x27;</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> False;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> True;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">XYCTFNO3</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$KickyMu</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$fpclose</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$N1ght</span> = <span class="string">&quot;Crypto0&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"><span class="variable">$KickyMu</span>, <span class="variable">$fpclose</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;KickyMu = <span class="variable">$KickyMu</span>;</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;fpclose = <span class="variable">$fpclose</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">XY</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable language_">$this</span>-&gt;N1ght == <span class="string">&#x27;oSthing&#x27;</span>) &#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">&quot;WOW, You web is really good!!!\n&quot;</span>;</span><br><span class="line">            <span class="keyword">echo</span> <span class="keyword">new</span> <span class="variable">$_POST</span>[<span class="string">&#x27;X&#x27;</span>](<span class="variable">$_POST</span>[<span class="string">&#x27;Y&#x27;</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__wakeup</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable language_">$this</span>-&gt;KickyMu-&gt;<span class="title function_ invoke__">XYCTF</span>()) &#123;</span><br><span class="line">            <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">XY</span>();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">isset</span>(<span class="variable">$_GET</span>[<span class="string">&#x27;CTF&#x27;</span>])) &#123;</span><br><span class="line">    <span class="title function_ invoke__">unserialize</span>(<span class="variable">$_GET</span>[<span class="string">&#x27;CTF&#x27;</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#web"><span class="toc-number">1.</span> <span class="toc-text">web</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%A2%E7%89%A2%E8%AE%B0%E4%BD%8F%EF%BC%8C%E9%80%9D%E8%80%85%E4%B8%BA%E5%A4%A7"><span class="toc-number">1.1.</span> <span class="toc-text">牢牢记住，逝者为大</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#warm-up"><span class="toc-number">1.2.</span> <span class="toc-text">warm up</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ezmd5"><span class="toc-number">1.3.</span> <span class="toc-text">ezmd5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ezpop"><span class="toc-number">1.4.</span> <span class="toc-text">ezpop</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ezClass"><span class="toc-number">1.5.</span> <span class="toc-text">ezClass</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ezSerialize"><span class="toc-number">1.6.</span> <span class="toc-text">ezSerialize</span></a></li></ol></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2024/04/28/xyctf2024/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2024/04/28/xyctf2024/&text=xyctf-web"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2024/04/28/xyctf2024/&title=xyctf-web"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2024/04/28/xyctf2024/&is_video=false&description=xyctf-web"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=xyctf-web&body=Check out this article: http://example.com/2024/04/28/xyctf2024/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2024/04/28/xyctf2024/&title=xyctf-web"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2024/04/28/xyctf2024/&title=xyctf-web"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2024/04/28/xyctf2024/&title=xyctf-web"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2024/04/28/xyctf2024/&title=xyctf-web"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2024/04/28/xyctf2024/&name=xyctf-web&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2024/04/28/xyctf2024/&t=xyctf-web"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <!-- <footer id="footer"> -->
+<!--   <div class="footer-left"> -->
+<!--     Copyright &copy; -->
+<!--      -->
+<!--      -->
+<!--     2024-2034 -->
+<!--     wm -->
+<!--   </div> -->
+<!--   <div class="footer-right"> -->
+<!--     <nav> -->
+<!--       <ul> -->
+<!--         <!-- -->
+<!--       <li><a href="/">Home</a></li><!-- -->
+<!--     <!-- -->
+<!--       <li><a href="/about/">About</a></li><!-- -->
+<!--     <!-- -->
+<!--       <li><a href="/archives/">Writing</a></li><!-- -->
+<!--      -->
+<!--       </ul> -->
+<!--     </nav> -->
+<!--   </div> -->
+<!-- </footer> -->
+
+<footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2024-2034
+    wm
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
