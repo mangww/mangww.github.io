@@ -1662,14 +1662,3 @@ code {
 #header-post #actions {
   direction: ltr !important;
 }
-.hider_title {
-  font-family: "Microsoft Yahei";
-  cursor: pointer;
-  color: #708090;
-}
-.close:after {
-  content: "▼";
-}
-.open:after {
-  content: "▲";
-}
