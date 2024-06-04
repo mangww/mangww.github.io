@@ -15,7 +15,7 @@
 <meta property="og:description" content="nmap探测存活主机:   1sudo nmap -sn ip&#x2F;24  namp探测开放端口   12sudo nmap --min-rate 1000 -p- ip以最小10000的速度扫描所有端口  进一步探测开放的端口提供的服务以及系统版本信息 12345678tcp方式扫描  sudo nmap -sT -sV -O -p22,80,3306  ip  udp方式扫描  sudo nmap">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-05-23T16:19:10.000Z">
-<meta property="article:modified_time" content="2024-05-31T13:55:47.999Z">
+<meta property="article:modified_time" content="2024-06-04T10:28:01.310Z">
 <meta property="article:author" content="wm">
 <meta name="twitter:card" content="summary">
     
@@ -170,6 +170,7 @@
 <p><strong>提权</strong>  </p>
 <figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">方式一:  </span><br><span class="line">cron自动任务执行提权</span><br><span class="line">在/etc 目录查看以cron开头的文件</span><br><span class="line">修改其中自动执行的脚本(可以添加上反弹shell的命令)</span><br><span class="line"></span><br><span class="line">方式二:</span><br><span class="line">内核提权</span><br></pre></td></tr></table></figure>
 
+<p>获得更好的交互:</p>
 <figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python -c &quot;import pty;pty.spawn(&#x27;/bin/bash&#x27;)&quot;</span><br><span class="line">这条命令相当于新开一个终端,便于用户交互</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
